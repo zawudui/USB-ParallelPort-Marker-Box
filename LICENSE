@@ -1,0 +1,9 @@
+This repository contains multiple independently licensed classes of material. There is no single licence that applies to every file.
+
+- Original hardware design and enclosure source: see LICENSE-HARDWARE (CERN-OHL-S-2.0).
+- Project-local KiCad library files (MarkerBox.kicad_sym and MarkerBox.pretty): CC-BY-SA-4.0 with the KiCad libraries exception; see third_party/KICAD-LIBRARIES-LICENSE.md. These are excluded from the original-hardware licence scope.
+- Firmware and host-side software: see LICENSE-FIRMWARE (MIT).
+- Original documentation: see LICENSE-DOCS (CC BY 4.0).
+- Third-party components and excluded materials: see THIRD_PARTY_NOTICES.md.
+
+If a file contains a more specific licence or attribution notice, follow that notice. No licence in this repository grants rights to third-party materials beyond the rights their owners have granted.
