@@ -1,0 +1,87 @@
+MATLAB R2024b：USB-to-DB25 Marker 示例（2026-11-04）
+
+1. 准备
+只需目标板USB；当前端口COM3。关闭串口助手或其他占用该端口的程序。
+切换到本目录，或把本目录加入MATLAB路径。
+serialportlist("available") 可查看可用端口；换USB口或电脑后端口名可能改变。
+这些代码基于MATLAB自带serialport接口，不需要Psychtoolbox。
+固件接口依据本项目protocol.h/protocol_dispatch.c，与完整功能候选2.1.0配套。
+
+2. 直接在命令行使用
+box = MarkerBox("COM3");
+disp(box.FirmwareVersion)
+disp(box.getStatus())
+box.configurePulse(2,10);      % 明确清零，设置自动脉冲2ms、间隙10ms
+r = box.sendMarker(1);        % 发事件码1，等待并校验ACK
+pause(0.05);
+box.sendMarker(170);          % 170/0xAA也使用完整帧，已经实测
+pause(0.05);
+box.clearMarker();
+box.waitIdle();
+box.close();                 % 尝试Clear并释放串口；下次需重新构造连接
+
+事件码1..255用于非零Marker；0等效Clear。
+通常一段实验只创建一次box，所有trial复用连接，结束时close。
+不要每次打Marker都重新打开串口。
+不要让其他软件或serialport对象同时占用COM3。
+
+3. 三个可运行的示例函数
+example_01_basic("COM3")
+    少量发码：1、42、170、255，最后Clear并关闭连接。
+
+example_02_hold_multimeter("COM3")
+    交互式电平保持，按回车才切换到下一码，适合万用表。
+    测0、八个单比特码以及255；函数退出时尝试恢复自动2ms/10ms、Clear并关闭连接。
+    本函数含人工输入提示，应在MATLAB桌面运行，不用-batch运行。
+    仅按已确认接线做台架测试，先保持DB25与实验设备分离。
+    按已核对的DB25母座正面方向（13孔排在上）：
+      上排从左到右13..1；下排从左到右25..14。
+      黑笔Pin25/GND_ISO；上排从右第2..9孔为Pin2..9/D0..D7。
+    保持模式中一个非零码会一直高，必须Clear、等Busy=false后再发送下一码。
+
+log = example_03_sequence("COM3",20,0.05);
+writetable(log,"marker_command_log.csv")
+    循环发送代表码并记录主机时间和ACK往返时间。
+    0.05为每次收到ACK后的pause秒数，不是精确的事件起始间隔。
+    ACK全部通过只证明协议响应，没有在接收端统计漏码或测量物理脉宽。
+
+4. 常用控制
+box.getVersion()
+box.getStatus()
+box.setPulse(5)               % 1..1000ms；设置值不会自动保存到Flash
+box.setGap(20)                % 0..1000ms
+box.clearMarker(); box.waitIdle();
+box.setMode("hold");          % 电平保持
+box.sendMarker(1);
+% 在这里手动测量。不要立即运行后面的Clear，否则看不到保持电平。
+box.clearMarker(); box.waitIdle();
+box.configurePulse(2,10);     % 恢复自动脉冲及默认参数
+box.close();
+
+getStatus字段：Mode、AutoPulse、Busy、Ready、PulseMs、GapMs。
+配置和MCU复位后的默认值为自动脉冲2ms/间隙10ms；正常USB挂起恢复会保留RAM参数。
+Clear会立即清数据，但从Active退出仍可能保留Gap，waitIdle用于等间隙完成。
+sendMarker不会自动等Busy结束，也不会自动重发。Busy/NotReady/NACK以错误报告。
+若ACK超时，事件可能已经发出，不要盲目重发造成重复事件。
+
+5. 清理与时间含义
+示例函数使用onCleanup，正常结束、报错或普通Ctrl+C退出函数时尝试清零并释放串口。
+手动命令行使用时，请自己执行box.clearMarker()和box.close()；清理未确认会有警告。
+HostSubmitTime_s等时间基于该box创建后的MATLAB tic/toc时钟。
+AckRoundTrip_s包括write、设备回复、USB/Windows和MATLAB读取，不是TTL上升沿时间。
+本机本次实测ACK往返约7..17ms，不能据此推断2ms脉冲变成了7..17ms。
+MATLAB的pause、这些同步等待ACK的示例均不提供硬实时调度保证。
+精确刺激同步/延迟抖动需要在采集端或示波器上验证；不要把主机ACK时间当真实TTL时间。
+
+6. 测试记录和范围
+test_protocol_vectors()：离线已抓取请求/回复向量、0xAA、端序、坏校验及长度检查。
+verify_matlab_hardware("COM3")：会实际发少量Marker及保持码，再清零、恢复2/10并释放串口。
+2026-11-04已用 MATLAB R2024b 实测：离线协议、基础示例、连续11条代表码ACK、保持/Busy/Clear和串口释放通过。交互万用表示例不自动执行。
+2026-11-09追加台架测量：100次命令/ACK往返全部成功，主机写入至完整ACK的往返时间为0.1796–0.3522 ms；单次D1物理脉冲约2.002 ms。一次MCU侧与DB25侧边沿差值约31 ns，但未校准探头/通道偏斜。
+这些结果不构成端到端主机到DB25单向延迟、统计脉宽容差、抖动、长期漏码率或接收设备兼容性保证。原始台架数据尚未纳入本公开快照。
+正式连接接收设备前，仍需核对其DB25针号、允许输入电平和脉宽要求，并在实际接收端完成收码测试。供电电流、纹波、瞬态、整机隔离、EMC及ESD资格验证仍未完成。
+
+MathWorks接口参考（所用基本API在R2024b可用）：
+https://www.mathworks.com/help/matlab/ref/serialport.html
+https://www.mathworks.com/help/matlab/ref/serialportlist.html
+https://www.mathworks.com/help/matlab/ref/serialport.setdtr.html
