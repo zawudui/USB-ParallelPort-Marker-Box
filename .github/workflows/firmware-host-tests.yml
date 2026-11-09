@@ -1,0 +1,72 @@
+name: Firmware host tests and target image
+on:
+  pull_request:
+    paths: ["firmware/**", ".github/workflows/firmware-host-tests.yml", ".gitignore", "README.md"]
+  push:
+    branches: [main]
+    paths: ["firmware/**", ".github/workflows/firmware-host-tests.yml", ".gitignore", "README.md"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  host-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure native tests
+        run: cmake -S firmware -B /tmp/marker-fw-build -DCMAKE_BUILD_TYPE=Debug
+      - name: Build
+        run: cmake --build /tmp/marker-fw-build --parallel
+      - name: Test
+        run: ctest --test-dir /tmp/marker-fw-build --output-on-failure
+  target-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install GNU Arm embedded toolchain
+        run: sudo apt-get update && sudo apt-get install -y gcc-arm-none-eabi binutils-arm-none-eabi
+      - name: Configure STM32F411 image
+        run: cmake -S firmware/target/stm32f411 -B /tmp/marker-target -DCMAKE_TOOLCHAIN_FILE=$GITHUB_WORKSPACE/firmware/target/stm32f411/toolchain.cmake -DCMAKE_BUILD_TYPE=Release
+      - name: Build ELF, HEX and BIN
+        run: cmake --build /tmp/marker-target --parallel
+      - name: Check the image exists
+        run: |
+          test -s /tmp/marker-target/marker_box.elf
+          test -s /tmp/marker-target/marker_box.hex
+          test -s /tmp/marker-target/marker_box.bin
+          arm-none-eabi-size /tmp/marker-target/marker_box.elf
+          arm-none-eabi-nm /tmp/marker-target/marker_box.elf | grep -q ' board_gpio_init_safe$'
+          arm-none-eabi-nm /tmp/marker-target/marker_box.elf | grep -q ' board_hse_pins_prepare$'
+          arm-none-eabi-nm /tmp/marker-target/marker_box.elf | grep -q ' board_iwdg_start$'
+          arm-none-eabi-nm /tmp/marker-target/marker_box.elf | grep -q ' board_stop_enter$'
+          arm-none-eabi-nm /tmp/marker-target/marker_box.elf | grep -q ' board_time_start$'
+          arm-none-eabi-nm /tmp/marker-target/marker_box.elf | grep -q ' OTG_FS_IRQHandler$'
+          arm-none-eabi-nm /tmp/marker-target/marker_box.elf | grep -q ' OTG_FS_WKUP_IRQHandler$'
+          arm-none-eabi-nm /tmp/marker-target/marker_box.elf | grep -q ' RTC_WKUP_IRQHandler$'
+          arm-none-eabi-nm /tmp/marker-target/marker_box.elf | grep -q ' TIM2_IRQHandler$'
+          arm-none-eabi-nm /tmp/marker-target/marker_box.elf | grep -q ' SysTick_Handler$'
+          echo "CI host tests and this image are not USB enumeration on a board and are not a flash approval."
+      - name: Record review-image identity
+        run: |
+          set -eu
+          mkdir -p "$GITHUB_WORKSPACE/firmware/ci-image"
+          cp /tmp/marker-target/marker_box.elf "$GITHUB_WORKSPACE/firmware/ci-image/marker_box.elf"
+          cp /tmp/marker-target/marker_box.hex "$GITHUB_WORKSPACE/firmware/ci-image/marker_box.hex"
+          cp /tmp/marker-target/marker_box.bin "$GITHUB_WORKSPACE/firmware/ci-image/marker_box.bin"
+          {
+            echo "image_role=review-image NOT-FOR-FAB"
+            echo "source_sha=$(git rev-parse HEAD)"
+            echo "toolchain_version=$(arm-none-eabi-gcc -dumpversion)"
+            arm-none-eabi-gcc --version | head -n 1
+            cmake --version | head -n 1
+            echo "note=CI host tests and this ELF are not USB enumeration on a board and are not a flash approval"
+            sha256sum \
+              "$GITHUB_WORKSPACE/firmware/ci-image/marker_box.elf" \
+              "$GITHUB_WORKSPACE/firmware/ci-image/marker_box.hex" \
+              "$GITHUB_WORKSPACE/firmware/ci-image/marker_box.bin"
+          } | tee "$GITHUB_WORKSPACE/firmware/ci-image/image-identity.txt"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: marker-box-review-image
+          path: firmware/ci-image/
+          if-no-files-found: error

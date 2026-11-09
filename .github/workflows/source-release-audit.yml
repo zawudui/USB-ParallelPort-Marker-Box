@@ -1,0 +1,17 @@
+name: Source snapshot integrity
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  source-integrity:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Check files, exact-byte hashes, ZIP meshes and local links
+        run: python tools/release_audit.py

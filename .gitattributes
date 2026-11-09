@@ -1,0 +1,3 @@
+# Preserve exact release/checksum bytes on Windows, macOS and Linux.
+# Text editors may display LF normally; Git must not convert archived CAD or records.
+* -text

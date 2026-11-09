@@ -1,0 +1,54 @@
+# KiCad
+*-backups/
+*.kicad_prl
+fp-info-cache
+*.lck
+~*.lck
+_autosave-*
+\#auto_saved_files#
+*-save.kicad_pcb
+*-save.kicad_sch
+*.bak
+*.r*bak
+*.goodpcb
+*.kicad_pcb-bak
+*.sch-bak
+# Freerouting / Specctra intermediates
+*.dsn
+*.ses
+*.rules
+# Archives and build outputs
+*.zip
+*.tar.gz
+hardware/enclosure/**/output/
+!hardware/enclosure/**/reference/*.zip
+__pycache__/
+*.pyc
+# OS / editor
+.DS_Store
+Thumbs.db
+*~
+
+# Firmware host-test and target build outputs
+/firmware/build/
+/firmware/build-*/
+/firmware/ci-image/
+/firmware/.pio/
+*.elf
+*.hex
+*.bin
+*.map
+*.o
+
+# Curated distributable ZIP files are source assets, not build outputs.
+!hardware/r7.2/manufacturing/usb_db25_marker_r7.2_JLC_RS274X_upload.zip
+!hardware/enclosure/r7.2/snap-fit-pa12/print-package-two-pa12-parts.zip
+/build/
+/build-target/
+/dist/
+/.venv/
+# Local credentials and machine configuration never belong in the snapshot.
+.env
+.env.*
+*.pem
+*.key
