@@ -1,0 +1,28 @@
+Drill report for usb_db25_marker.kicad_pcb
+Created on 2026-10-20T07:58:54+0000
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  B.Cu                      back
+
+
+Drill file 'usb_db25_marker-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.300mm  0.0118"  (182 holes)
+    T2  0.600mm  0.0236"  (4 holes)  (with 4 slots)
+    T3  0.800mm  0.0315"  (72 holes)
+    T4  1.000mm  0.0394"  (11 holes)
+    T5  1.200mm  0.0472"  (25 holes)
+    T6  3.200mm  0.1260"  (2 holes)
+
+    Total plated holes count 296
+
+
+Drill file 'usb_db25_marker-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+    T1  0.650mm  0.0256"  (2 holes)
+
+    Total unplated holes count 2

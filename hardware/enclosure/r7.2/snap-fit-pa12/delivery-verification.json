@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "delivery": "<delivery-root>/05_3D打印外壳_r7.2_首版试装/C_全打印卡扣_免螺丝_PA12",
+  "printed_part_count": 2,
+  "extra_assembly_materials_required": [],
+  "build_report_status": "PASS_WITH_UNVERIFIED_GAPS",
+  "pcb_collision_refs": [],
+  "parts_valid_watertight": true,
+  "source_output_delivery_hashes_match": true,
+  "B_version_unchanged": true,
+  "send_package": "<delivery-root>/05_3D打印外壳_r7.2_首版试装/C_全打印卡扣_免螺丝_PA12/C_送打包_仅两件_PA12.zip",
+  "send_package_sha256": "0bfd2bfdf6aa71abece4dbff57515c4eec718069b56284dd0920150f1dc0baac",
+  "files_sha256": {
+    "00_C方案说明.md": "d6e8a1563bce5c543a93bc03e5cb174bcef7ae3c66e14bb3172552e45b77469f",
+    "assembled_r72_snap.step": "60e8f8b4120cdc6f0178cba5827129a87943208db3c1ce0834be458d32f2c422",
+    "base_r72_snap.step": "6ce6c87149ea282c5e3327489cfab4d9ec8106bfbdcb6d63881870aff0ec6263",
+    "base_r72_snap.stl": "be752365d4c0564a5cd483a685260c11f4dfbe00a058eb1a5d22bb11317188ab",
+    "C_geometry_preview.png": "9b57e20d6c5af5be1369546e8d9b906ee2895cc860b7e877bc56fd031af01178",
+    "C_latch_section.png": "108e849fbe3f96db07c668cce5d611db6453ac2bcfe2dbe93146572d88678461",
+    "C_送打包_仅两件_PA12.zip": "0bfd2bfdf6aa71abece4dbff57515c4eec718069b56284dd0920150f1dc0baac",
+    "lid_r72_snap.step": "bf5b403d01ea2457d270c790a709fbd662cbace953eb789e8add75489aa732c9",
+    "lid_r72_snap.stl": "46a5811499730b207dad91f606b850366a9406f60bed7c7dfb01483c301814ac",
+    "mesh_verification.json": "1ba61919bdbdd3575bedbb4035fcfa60186c6c64a83f73309752622506b302c1",
+    "params.json": "655fe43982b8e1b715d09f92811dd543399e4a8f918ff8f2c2a4321ef912e8f6",
+    "SHA256SUMS.txt": "124d056d17637fdd9728dcd87a0c92f742448b39a489da47b68b9e00352f94a0",
+    "打印要求.txt": "14e24af3f67c99148bb3b6f102885abb2a567a3130502a342458f15d05a3a5f8",
+    "optional_coupon\\clip_base.stl": "0a871aafdf58ad91dd5bdb94b1383d21c66c50030f48823503c9b4ba95f33268",
+    "optional_coupon\\clip_lid.stl": "5a97b28f25a1be8dc34f4cf59d9a69125db334b20f833606822aea8ff11c19e5"
+  }
+}

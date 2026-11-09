@@ -1,0 +1,148 @@
+{
+  "design_type": "first-fit prototyping - do not release without test fit",
+  "board_outer_mm": [
+    155,
+    118,
+    1.6
+  ],
+  "enclosure_outer_mm": [
+    171.0,
+    130.0,
+    33.0
+  ],
+  "coord_system": "aligned with supplied EasyEDA 3D STEP",
+  "material_recommendation": "PETG / PA12; 0.2 mm layers; 3-4 perimeters, 25-35% infill",
+  "wall_thickness_mm": 2.8,
+  "floor_roof_mm": [
+    2.8,
+    2.8
+  ],
+  "board_lower_z_mm": 0,
+  "board_upper_z_mm": 1.6,
+  "lowest_observed_3d_part_z_mm": -2.4,
+  "highest_observed_3d_part_z_mm": 12.8,
+  "lid_roof_lower_z_mm": 20.2,
+  "pcba_mount": "four support ledges, four compliant top retainers, lateral fins; no PCB holes needed",
+  "retainer_gap_above_board_mm": 0.6,
+  "foam_pad_recommendation_mm": 0.8,
+  "fasteners": "4 x M3 self-tapping screws for PETG, nominal M3x25; verify engagement and screw head",
+  "pilot_diameter_mm": 2.5,
+  "clearance_diameter_mm": 3.4,
+  "db25_component_envelope_mm": {
+    "x": [
+      141.75,
+      162.47
+    ],
+    "y": [
+      -102.07,
+      -47.17
+    ],
+    "z": [
+      -4.0,
+      14.55
+    ]
+  },
+  "db25_fit_mm": {
+    "shell_front_x": 161.57,
+    "flange_x": 155.0,
+    "outer_wall_x": 163.0,
+    "mating_face_recess_mm": 1.43,
+    "shell_top_z": 14.15,
+    "jackscrews": [
+      {
+        "x": 157.9,
+        "y": -98.14,
+        "radius": 4.0
+      },
+      {
+        "x": 157.9,
+        "y": -51.1,
+        "radius": 4.0
+      }
+    ],
+    "courtyard_mm": {
+      "x": [
+        142.15,
+        162.07
+      ],
+      "y": [
+        -101.67,
+        -47.57
+      ]
+    }
+  },
+  "db25_opening_review": {
+    "opening_changed": true,
+    "window_size_mm": {
+      "y": 58.0,
+      "z": 23.2
+    },
+    "measured_ligament_mm": {
+      "probe_x_mm": [
+        160.5,
+        162.8
+      ],
+      "below_window": 4.8,
+      "above_window": 5.0
+    },
+    "margin_beyond_max_flange_mm": [
+      2.27,
+      2.31
+    ],
+    "decision": "FIRST-FIT thicken: DB25 window shrunk without mating-hood or thumbscrew drawings. Width 58.0 mm keeps >=2.2 mm beyond max flange (53.42 mm) and still clears 4-40 ear circles. Height top cut to zb=18.0 so upper ligament is ~5.0 mm (was 2.9 mm). USB window also tightened around J1 STEP body with ~1.5–3 mm documented clearance. Physical plug/hood fit still required before lock."
+  },
+  "pcb_clearance_summary": {
+    "modeled_component_count": 120,
+    "collision_refs": [],
+    "minimum_component_clearance_mm": 4.08,
+    "minimum_component_clearance_ref": "R97",
+    "unverified_refs": [
+      "J2",
+      "R99",
+      "TP201",
+      "TP202",
+      "TP203",
+      "U20"
+    ]
+  },
+  "drill_file": "hardware/r7.2/manufacturing/usb_db25_marker_r7.2_JLC_RS274X_upload.zip:usb_db25_marker-PTH.drl",
+  "drill_created": "2026-10-20T07:58:54Z",
+  "notes": [
+    "Hole positions checked in hardware/r7.2/manufacturing/usb_db25_marker_r7.2_JLC_RS274X_upload.zip:usb_db25_marker-PTH.drl (2026-10-20T07:58:54Z). That file is the r7.1 drill.",
+    "No r7.2 Gerber is in this repository. The r7.2 PCB still places J2 at (144.46, 58), rotation +90, and its footprint matches the r7.1 footprint.",
+    "The outer signal row is X=147.30, 7.70 mm from the right edge X=155. The flange is on that edge and the socket faces out.",
+    "The keep-out is the courtyard plus 0.40 mm on each side, including the inboard end. It is not a NorComp solid.",
+    "Shell front X=161.57, outer face X=163.0, so the mating face is 1.43 mm behind the outer face. The window already removes that wall.",
+    "DB25 opening resized for FIRST-FIT: width 58.0 x height 23.2 mm (was 61.0 x 25.3). Upper ligament target ~5.0 mm. NorComp rev 18 still lacks mating hood and option-53 thumbscrew size; clearance is documented conservative guess.",
+    "USB-C window tightened to y=-53..-37, z=-1.5..8.5 around J1 STEP body (still reaches face x=0.08). No cable-plug drawing; leave ~1.5 mm+ side clearance.",
+    "Every solid in the uploaded PCB STEP was checked. Placeholder cubes and PCB references missing from that STEP stay unverified.",
+    "Screws are outside the board. Do not bridge USB ground and GND_ISO with metal hardware.",
+    "Do not connect this board to an EEG instrument before electrical validation."
+  ],
+  "usb_window_mm": {
+    "xa": -9.2,
+    "xb": 1.2,
+    "ya": -53.0,
+    "yb": -37.0,
+    "za": -1.5,
+    "zb": 8.5
+  },
+  "db25_window_mm": {
+    "xa": 158.0,
+    "xb": 164.0,
+    "ya": -103.6,
+    "yb": -45.6,
+    "za": -5.2,
+    "zb": 18.0
+  },
+  "screw_xy_mm": {
+    "x": [
+      -4.0,
+      159.0
+    ],
+    "y": [
+      -15.0,
+      -110.0
+    ]
+  }
+}

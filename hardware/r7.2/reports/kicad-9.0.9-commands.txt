@@ -1,0 +1,26 @@
+KiCad 9.0.9 (package 9.0.9-9.0.9~ubuntu24.04.1)
+Date: 2026-10-20
+Board: hardware/r7.2/kicad
+Status: NOT FOR FAB. No Gerber exported. No powered measurement.
+
+Commands, run from hardware/r7.2/kicad:
+
+  kicad-cli sch erc --severity-all \
+    --output ../reports/usb_db25_marker-erc-r7.2.txt \
+    usb_db25_marker.kicad_sch
+
+  kicad-cli pcb drc --schematic-parity --severity-all \
+    --output ../reports/usb_db25_marker-drc-r7.2.txt \
+    usb_db25_marker.kicad_pcb
+
+ERC 2026-10-20T07:56:49Z: 0 errors, 0 warnings.
+DRC 2026-10-20T07:57:38Z: 0 errors, 0 unconnected pads, 0 schematic parity issues,
+87 lib_footprint_mismatch warnings. See footprint-mismatch-r7.2.md.
+
+Re-run after the U17 DCK pad change and the U18/U19 GND strap. Zones were
+refilled before this DRC. The 06:43 reports were the pre-change board.
+The 2026-10-19 0/0 result was produced before R98 became 1k and R99 was
+removed, and is not evidence for this board.
+
+Gerbers, drills, BOM and placement for the prototype package:
+hardware/r7.2/fab-review/. That export is not a fab CAM receipt.

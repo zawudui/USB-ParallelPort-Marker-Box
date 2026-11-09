@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "MarkerBox")(type "KiCad")(uri "${KIPRJMOD}/MarkerBox.pretty")(options "")(descr "Project-local footprints (r6): NorComp DB25"))
+)

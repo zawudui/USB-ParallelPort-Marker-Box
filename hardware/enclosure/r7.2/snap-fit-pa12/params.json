@@ -1,0 +1,87 @@
+{
+  "design_type": "C removable snap-fit prototype; all retention integral to two printed parts",
+  "outer_mm": [
+    171,
+    144,
+    33
+  ],
+  "end_wall_mm": 2.8,
+  "long_side_wall_mm": 2.6,
+  "floor_roof_mm": [
+    2.8,
+    2.8
+  ],
+  "material_process": "unfilled PA12 nylon, MJF or SLS; two parts printed separately",
+  "extra_assembly_materials_required": [],
+  "printed_part_count": 2,
+  "rail_holes_xy_mm": [
+    [
+      5.0,
+      2.5
+    ],
+    [
+      145.0,
+      2.5
+    ],
+    [
+      5.0,
+      -120.5
+    ],
+    [
+      150.0,
+      -120.5
+    ]
+  ],
+  "rail_hole_diameter_mm": 2.05,
+  "rail_hole_reference": {
+    "cam_archive_sha256": "7b52281641e7880c67805d13fff4eff8fabb158429e40dcf68841338c3bcfd72",
+    "standalone_drill_sha256": "91befe5777df443315c7166c456bb4cf366a79bf7c1cef4a3dd0525addb80d83",
+    "coordinate_conversion": "enclosure X = panel X; enclosure Y = panel Y - 123 mm",
+    "hole_type": "NON_PLATED",
+    "finish_diameter_mm": 2.05,
+    "source": "Private prototype CAM reference; supplier/account identifiers omitted in the personal public snapshot."
+  },
+  "pcb_mount": "four solid rail pedestals; one round + one relieved diagonal locating pin; four lid stops",
+  "locator_pin_diameter_mm": 1.4,
+  "locator_pin_height_mm": 1.6,
+  "relieved_locator_minor_major_mm": [
+    1.0,
+    1.4
+  ],
+  "pcb_stop_lower_z_mm": 2.05,
+  "pcb_nominal_vertical_gap_mm": 0.44999999999999973,
+  "snap_count": 4,
+  "snap_x_mm": [
+    38.0,
+    117.0
+  ],
+  "snap_beam_thickness_width_mm": [
+    1.2,
+    8.0
+  ],
+  "snap_root_radius_mm": 0.8,
+  "alignment_rim_clearance_per_side_mm": 0.4,
+  "snap_beam_back_clearance_mm": 0.5999999999999996,
+  "usb_window_mm": {
+    "xa": -9.2,
+    "xb": 1.2,
+    "ya": -53.0,
+    "yb": -37.0,
+    "za": -1.5,
+    "zb": 8.5
+  },
+  "db25_window_mm": {
+    "xa": 158.0,
+    "xb": 164.0,
+    "ya": -103.6,
+    "yb": -45.6,
+    "za": -5.2,
+    "zb": 18.0
+  },
+  "stl_pose": "print ready, separate parts on Z=0; base translated, lid inverted; STEP uses PCB assembly coordinates",
+  "limits": [
+    "First physical snap/plug/PCB fit still required; no holding-force or fatigue validation.",
+    "PCB can be lifted out when the lid is removed; the assembled lid captures the PCB.",
+    "FDM PLA/PETG and standard SLA resins are not qualified for this PA12 geometry."
+  ]
+}

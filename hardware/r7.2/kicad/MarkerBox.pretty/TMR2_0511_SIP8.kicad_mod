@@ -1,0 +1,296 @@
+(footprint "TMR2_0511_SIP8"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "DCDC-Converter, TRACO, TMR xxxx, Single/Dual output, https://www.tracopower.com/sites/default/files/products/datasheets/tmr2_datasheet.pdf")
+	(tags "DCDC-Converter TRACO TMRxxxx Single/Dual_output")
+	(property "Reference" "U2"
+		(at -3.695 1.4 0)
+		(layer "F.SilkS")
+		(uuid "ce61edbb-6c9a-4edd-9bac-06259696291c")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Value" "TMR 0511"
+		(at 9.5 8 0)
+		(layer "F.Fab")
+		(uuid "c27ea4b0-f91b-4e06-8660-3cb1cf1b5b4f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6e976785-b328-436c-b7b2-36590c1a321e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "86e0c73a-90f4-4828-aecb-b745d8909f0b")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -2.5 -1)
+		(end -2.5 1)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "763f0db6-97d3-44c3-b753-31f868833d3d")
+	)
+	(fp_line
+		(start -2.12 -3.32)
+		(end 19.92 -3.32)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "9e56b32e-46cd-4646-b701-6b7cf5472901")
+	)
+	(fp_line
+		(start -2.12 6.12)
+		(end -2.12 -3.32)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7400253f-6546-4aa8-a638-84cdfa1aa16e")
+	)
+	(fp_line
+		(start 19.92 -3.32)
+		(end 19.92 6.12)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "522c9f1f-e241-423e-8145-7eb669553967")
+	)
+	(fp_line
+		(start 19.92 6.12)
+		(end -2.12 6.12)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4bd6e108-31c6-4078-bf40-a2e2bde408b4")
+	)
+	(fp_line
+		(start -2.25 -3.45)
+		(end -2.25 6.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "f0c6f731-2cc6-4a51-98c1-e43c85532e95")
+	)
+	(fp_line
+		(start -2.25 -3.45)
+		(end 20.05 -3.45)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "0915006d-695e-4e23-a1ba-220ee928bf6a")
+	)
+	(fp_line
+		(start -2.25 6.25)
+		(end 20.05 6.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "228293ee-fab3-4adb-b9f0-7f04809b0689")
+	)
+	(fp_line
+		(start 20.05 -3.45)
+		(end 20.05 6.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "2d098fdd-bf22-42d8-8fbc-3c2281032711")
+	)
+	(fp_line
+		(start -2 -3.2)
+		(end -2 -1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "086b1689-77e5-4f20-a9c3-a60d331b01e9")
+	)
+	(fp_line
+		(start -2 -1)
+		(end -1 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "210b1585-e129-4b73-a41d-bb20a950bb1f")
+	)
+	(fp_line
+		(start -2 1)
+		(end -2 6)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "6d4592d9-c2c1-45c1-9264-628d58cdf2a6")
+	)
+	(fp_line
+		(start -2 1)
+		(end -1 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "92b0fc7c-45a3-4815-8cb6-1b30b02a0056")
+	)
+	(fp_line
+		(start 19.8 -3.2)
+		(end -2 -3.2)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "4f79952b-183e-4230-a1c0-5655102db5ed")
+	)
+	(fp_line
+		(start 19.8 -3.2)
+		(end 19.8 6)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "9aa0ccb9-bda3-4121-b528-a9b4ed9c9524")
+	)
+	(fp_line
+		(start 19.8 6)
+		(end -2 6)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "8605d6f2-a4bb-4409-bd79-139d8c509d80")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 9.19 3.76 0)
+		(layer "F.Fab")
+		(uuid "6fdbcfdc-0f1c-4119-92ba-7e66c8e0f363")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 1.5 3)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "9f558107-6872-4cb2-81f9-d1e4633f9db3")
+	)
+	(pad "2" thru_hole oval
+		(at 2.54 0)
+		(size 1.5 3)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "6b1ec336-7478-411b-a3b1-ffb5af042c4a")
+	)
+	(pad "3" thru_hole oval
+		(at 5.08 0)
+		(size 1.5 3)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "b0038945-97ac-4ce1-ae1e-b0551accaee1")
+	)
+	(pad "5" thru_hole oval
+		(at 10.16 0)
+		(size 1.5 3)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "ce6cdd26-6b90-4655-8a37-aefd0484bf05")
+	)
+	(pad "6" thru_hole oval
+		(at 12.7 0)
+		(size 1.5 3)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "0425186f-ef1d-496f-b8b0-2356377d4a9b")
+	)
+	(pad "7" thru_hole oval
+		(at 15.24 0)
+		(size 1.5 3)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "aeae9d16-c0ac-42aa-a354-59d8df8b7142")
+	)
+	(pad "8" thru_hole oval
+		(at 17.78 0)
+		(size 1.5 3)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "be9b7112-3543-4c1e-89a3-c272200f5181")
+	)
+	(embedded_fonts no)
+	(model "${KICAD9_3DMODEL_DIR}/Converter_DCDC.3dshapes/Converter_DCDC_TRACO_TMR-xxxx_THT.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
