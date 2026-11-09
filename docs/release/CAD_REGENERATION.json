@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-09",
+  "scope": "geometry-only regeneration; no physical or full PCB collision test",
+  "python": "3.10.11",
+  "cadquery": "2.6.1",
+  "trimesh": "4.9.0",
+  "geometry_checks_match_archive": true,
+  "geometry_checks": {
+    "base_lid_intersection_mm3": 0.0,
+    "cam_rail_intersection_mm3": 0.0,
+    "db25_envelope_intersection_mm3": 0.0,
+    "minimum_clip_to_rail_gap_at_screened_tip_deflection_mm": 1.423880597014925,
+    "snap_beam_back_clearance_mm": 0.5999999999999996,
+    "snap_nominal_lateral_engagement_mm": 0.7999999999999989,
+    "snap_nominal_vertical_free_play_mm": 0.3999999999999999,
+    "snap_screening": {
+      "model": "small-deflection uniform cantilever, epsilon=1.5*t*delta/L^2",
+      "length_mm": 20.099999999999998,
+      "thickness_mm": 1.2,
+      "width_mm": 8.0,
+      "pad_deflection_screen_mm": 1.7999999999999996,
+      "overhanging_tip_deflection_mm": 2.176119402985074,
+      "strain_fraction": 0.008019603475161504,
+      "screening_target_fraction": 0.015,
+      "qualification": "nominal design screen only; no FEA, force or cycle testing"
+    },
+    "pcb_vertical_gap_nominal_mm": 0.44999999999999973,
+    "pcb_vertical_gap_at_1p76mm_board_mm": 0.2899999999999998,
+    "pin_engagement_at_1p44mm_board_and_max_lid_play_mm": 0.5900000000000003
+  },
+  "parts": [
+    {
+      "part": "base",
+      "archived_brep_volume_mm3": 89834.39909104427,
+      "rebuilt_brep_volume_mm3": 89834.39909104427,
+      "stl_watertight": true,
+      "stl_winding_consistent": true,
+      "stl_bounds_equal": true,
+      "stl_relative_volume_error": 9.025891531868205e-06,
+      "step_byte_identical": false,
+      "stl_byte_identical": true
+    },
+    {
+      "part": "lid",
+      "archived_brep_volume_mm3": 97906.9548160892,
+      "rebuilt_brep_volume_mm3": 97906.9548160892,
+      "stl_watertight": true,
+      "stl_winding_consistent": true,
+      "stl_bounds_equal": true,
+      "stl_relative_volume_error": 1.4038395921665717e-05,
+      "step_byte_identical": false,
+      "stl_byte_identical": true
+    }
+  ]
+}

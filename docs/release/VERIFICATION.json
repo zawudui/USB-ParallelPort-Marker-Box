@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-09",
+  "source_baseline": "43cc30cfc41bbf8086dc98116405143cde52e5f2",
+  "host_environment": {
+    "os": "Windows x64",
+    "python": "3.10.11",
+    "cmake": "3.31.10",
+    "ninja": "1.13.0",
+    "native_gcc": "16.2.0",
+    "arm_gcc": "13.3.1 (Arm GNU Toolchain 13.3.Rel1)"
+  },
+  "host_tests": {
+    "passed": 24,
+    "failed": 0
+  },
+  "target_build": "passed",
+  "rebuilt_artifact_sha256": {
+    "marker_box.bin": "c3ce2ff949e5fc71f071573c2adc2067e985357d90e5c9e40b19653d74de7671",
+    "marker_box.elf": "2018b084fb8b5e5a76d51bcb3d50e4e3b90550bc4b5c4dbd0b4fe17aa198ad5e",
+    "marker_box.hex": "1106b193ab03ec727e1d37bc29051f08d38f88afa9c9d8439a1574593e3dc91c"
+  },
+  "all_three_match_original_verified_firmware": true,
+  "binary_distribution": "not included; source release only",
+  "hardware_tests_rerun": false,
+  "cad_regeneration": "CAD_REGENERATION.json"
+}
