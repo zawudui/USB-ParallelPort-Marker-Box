@@ -1,6 +1,6 @@
 # Electrical interface and specification status
 
-This document separates the intended design values from measurements actually recorded on the prototype. It is not a system-level safety or compliance certificate.
+This document separates the intended design values from measurements actually recorded on the prototype.
 
 ## Host connection
 
@@ -28,9 +28,9 @@ The output word is an 8-bit code. Each output bit is asserted when the correspon
 - A controlled power path feeds the boost stage and the primary side of the isolated DC/DC converter.
 - The isolated secondary nominal rail is 5 V and supplies the output-side logic/optocoupler circuitry.
 - The DB25 signal reference is GND_ISO, not host USB ground.
-- The design uses optocouplers and an isolated DC/DC converter. Component isolation ratings do not establish the creepage, clearance, dielectric withstand, ESD, or safety performance of the complete assembled device.
+- The design uses optocouplers and an isolated DC/DC converter.
 
-The 4.40–5.50 V USB input range and approximately 6.3 V boost target are design objectives from the r7.2 engineering design. They are not a guaranteed operating range until full-load input-current, startup, transient, temperature and low-voltage tests are completed.
+The 4.40–5.50 V USB input range and approximately 6.3 V boost target are design objectives from the r7.2 engineering design.
 
 ## Marker timing
 
@@ -41,17 +41,6 @@ The 4.40–5.50 V USB input range and approximately 6.3 V boost target are desig
 - One test of 100 command/ACK transactions measured host write-to-complete-ACK round trips of 0.1796–0.3522 ms.
 - A single MCU-output-to-DB25-output comparison showed approximately 31 ns difference, without calibration for probe/channel skew. During this unloaded-DB25 bench capture, ordinary oscilloscope probe ground clips temporarily commoned host ground and GND_ISO; this is not evidence of isolation performance and must not be repeated while connected to an EEG/DAQ receiver.
 
-These are observations from a limited bench session, not guaranteed tolerances. The host ACK time is not the one-way trigger latency. When measuring across the isolation barrier, use appropriate differential/isolated measurement methods; ordinary earth-referenced probe grounds can defeat the barrier. No end-to-end host-to-DB25 latency distribution or jitter specification is claimed.
-
-## Not yet qualified
-
-The public evidence does not establish:
-
-- USB current compliance or worst-case inrush/transient behavior across 4.40–5.50 V.
-- System-level ESD or EMC compliance.
-- System-level dielectric withstand or isolation certification.
-- Long-duration event-loss rate or timing jitter under host load.
-- Compatibility with every EEG, ERP, fNIRS, eye-tracking, or physiological acquisition system.
-- Clinical or medical-device suitability.
+These measurements are a limited bench observation, not a latency, jitter, or certification spec. The host ACK time is not the one-way trigger latency. When measuring across the isolation barrier, use appropriate differential/isolated measurement methods; ordinary earth-referenced probe grounds can defeat the barrier.
 
 Use a dummy load for initial tests. Do not connect to valuable acquisition equipment until both sides' electrical requirements and the exact cable pinout have been checked.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only source integrity audit; not a legal or hardware-safety certification."""
+"""Read-only audit; only checks source integrity."""
 from __future__ import annotations
 
 import hashlib
@@ -155,8 +155,6 @@ def main():
     usb_status()
     source_files()
     print("Source integrity:", checks - len(failures), "passed,", len(failures), "failed.")
-    print("NOT VERIFIED by this test: IP ownership, third-party redistribution compliance, CAD regeneration,")
-    print("physical interface/isolation performance, clinical use, or production USB IDs.")
     return 1 if failures else 0
 
 

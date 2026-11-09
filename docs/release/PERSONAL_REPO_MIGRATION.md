@@ -1,6 +1,6 @@
 # Upload the clean personal source snapshot
 
-This directory is the curated personal source release for **zawudui**. It contains no `.git` directory or private commit history. Original material is credited to zawudui following the owner's explicit confirmation on 2026-11-09; existing third-party notices remain applicable.
+This directory is the curated personal source release for **Li Jingwei**. It contains no `.git` directory or private commit history. Original material is credited to Li Jingwei following the owner's explicit confirmation on 2026-11-09; existing third-party notices remain applicable.
 
 ## New repository
 

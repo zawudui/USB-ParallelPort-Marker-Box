@@ -16,4 +16,4 @@ The BOM is a design reference, not a complete procurement contract or a locked v
 
 The RS-274X ZIP is the fabrication upload convenience package. Always inspect the fabricator's CAM/production proof, drill mapping, board outline, isolation clearances and fine-pitch footprints before authorizing a new run.
 
-The files reproduce the r7.2 engineering prototype revision. They are not evidence of system-level safety, ESD, EMC, isolation or regulatory qualification.
+The files reproduce the r7.2 engineering prototype revision.

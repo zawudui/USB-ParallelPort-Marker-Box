@@ -4,7 +4,7 @@ This repository includes or refers to third-party components and materials. They
 
 ## KiCad libraries
 
-The project-local symbol/footprint collection credits the KiCad library contributors and is distributed under CC BY-SA 4.0 with the KiCad libraries exception, separately from the original CERN-OHL-S hardware design. See the [file-level attribution record](third_party/KICAD-LIBRARIES-LICENSE.md), [upstream licence/exception notice](third_party/licenses/KiCad-LIBRARIES-LICENSE.txt), and [full CC BY-SA legal code](third_party/licenses/CC-BY-SA-4.0.txt). Original local additions/modifications are credited to zawudui under the same library terms. Historical upstream revisions are not recorded for every entry; the record states the available evidence without inventing a version. Standard system libraries are installed separately through KiCad.
+The project-local symbol/footprint collection credits the KiCad library contributors and is distributed under CC BY-SA 4.0 with the KiCad libraries exception, separately from the original CERN-OHL-S hardware design. See the [file-level attribution record](third_party/KICAD-LIBRARIES-LICENSE.md), [upstream licence/exception notice](third_party/licenses/KiCad-LIBRARIES-LICENSE.txt), and [full CC BY-SA legal code](third_party/licenses/CC-BY-SA-4.0.txt). Original local additions/modifications are credited to Li Jingwei under the same library terms. Historical upstream revisions are not recorded for every entry; the record states the available evidence without inventing a version. Standard system libraries are installed separately through KiCad.
 
 ## Manufacturer documentation and drawings
 

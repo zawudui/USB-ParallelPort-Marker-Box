@@ -1,6 +1,6 @@
 # KiCad library attribution and licence scope
 
-The project-local library collection is supplied under **CC BY-SA 4.0 with the KiCad libraries exception**. Original local additions/modifications are Copyright (c) 2026 zawudui; incorporated KiCad material is credited to the **KiCad library contributors**. These library files are excluded from the original hardware's CERN-OHL-S licence scope.
+The project-local library collection is supplied under **CC BY-SA 4.0 with the KiCad libraries exception**. Original local additions/modifications are Copyright (c) 2026 Li Jingwei; incorporated KiCad material is credited to the **KiCad library contributors**. These library files are excluded from the original hardware's CERN-OHL-S licence scope.
 
 The full [upstream licence/exception notice](licenses/KiCad-LIBRARIES-LICENSE.txt) and [CC BY-SA legal text](licenses/CC-BY-SA-4.0.txt) accompany the files. Official upstreams: [footprints](https://gitlab.com/kicad/libraries/kicad-footprints), [symbols](https://gitlab.com/kicad/libraries/kicad-symbols), and [licensing policy](https://www.kicad.org/libraries/license/).
 
@@ -16,7 +16,7 @@ All paths below are relative to `hardware/r7.2/kicad/`.
 | `MarkerBox.kicad_sym`: `TPD4E05U06DQAR` | The same script extracts KiCad `Power_Protection:TPD4EUSB30`, renames units/value and changes project metadata. |
 | Other local symbols: `TLV75533PDBVR`, `74LVC06A`, `TMR0511`, `Q_2N7002_SOT23`, `Crystal_GND24` | Mixed original/adapted project symbols. Exact historic per-symbol revisions are unrecorded. The complete collection, including original local additions, is supplied under the same CC BY-SA 4.0 + KiCad-exception terms rather than claiming exclusive project authorship. |
 
-This records available provenance, not a byte-identical match to an unrecorded upstream version. Existing attribution in the supplied files is retained. Manufacturer names/datasheet links identify dimensional and electrical references, without implying manufacturer endorsement or a manufacturer CAD redistribution licence.
+This records available provenance, not a byte-identical match to an unrecorded upstream version. Existing attribution in the supplied files is retained. Manufacturer names/datasheet links identify dimensional and electrical references, not a manufacturer CAD redistribution licence.
 
 ## Design versus library collection
 

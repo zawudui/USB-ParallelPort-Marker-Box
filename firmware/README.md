@@ -32,7 +32,7 @@ Requirements: CMake 3.16+, GNU Arm Embedded Toolchain (arm-none-eabi-gcc, arm-no
 
 Outputs: marker_box.elf, marker_box.hex, and marker_box.bin in build-target/.
 
-GitHub Actions runs host tests and compiles the target image. A successful build does not mean a physical board has been programmed or electrically qualified.
+GitHub Actions runs host tests and compiles the target image. A successful build does not mean the board was programmed or electrically tested.
 
 ## USB VID/PID — important
 
@@ -42,9 +42,9 @@ See the [USB identifier decision guide](../docs/release/USB_ID_PLAN.md) for legi
 
 ## Timing and validation scope
 
-The 2 ms default is a firmware timing target. A single bench capture on 2026-11-09 measured one D1 pulse at approximately 2.002 ms. This is not a statistical tolerance or jitter specification. A separate 100-command test measured 0.1796–0.3522 ms host write-to-complete-ACK round trips; this is not one-way host-to-output latency.
+The 2 ms default is a firmware timing target. A single bench capture on 2026-11-09 measured one D1 pulse at approximately 2.002 ms. A separate 100-command test measured 0.1796–0.3522 ms host write-to-complete-ACK round trips; this is not one-way host-to-output latency. These measurements are a limited bench observation, not a latency, jitter, or certification spec.
 
-The prototype has not been qualified for system-level ESD, EMC, isolation withstand, USB current/transients, long-duration event-loss rate, or compatibility with every EEG/DAQ receiver. Verify the receiving instrument's DB25 pinout and electrical requirements before connection.
+Verify the receiving instrument's DB25 pinout and electrical requirements before connection.
 
 ## Source layout
 

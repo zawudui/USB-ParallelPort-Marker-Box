@@ -20,8 +20,6 @@ Do not substitute a KiCad file from a different branch or revision without regen
 
 The r7.2 prototype was manufactured and assembled as an EVT sample. A prototype board was subsequently powered, programmed and bench-tested. The 2026-11-09 evidence is summarized in ../../docs/validation/README.md.
 
-This is not a certified medical device or a qualified production design. System-level ESD, EMC, dielectric withstand, USB power/transient, long-duration reliability and broad receiver compatibility have not been established. The design is published for research and engineering evaluation.
-
 ## Before manufacturing
 
 1. Verify the source revision and SHA-256 manifest.

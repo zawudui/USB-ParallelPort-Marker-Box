@@ -1,5 +1,5 @@
 function log = example_03_sequence(port,count,intervalSeconds)
-% 少量连续发码并记录ACK；此记录不证明采集端零漏码或2ms物理脉宽。
+% 少量连续发码并记录ACK。
 % pause是每次收到ACK后的等待，不保证精确的Marker起始间隔。
 if nargin<1, port="COM3"; end
 if nargin<2, count=20; end

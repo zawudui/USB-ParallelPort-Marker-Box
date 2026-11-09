@@ -2,9 +2,9 @@
 
 **An open-hardware USB-to-DB25 event marker interface for EEG/ERP and experimental research.**
 
-开发者与个人发布者：**zawudui**。中文说明见 [README_CN.md](README_CN.md)。
+开发者与个人发布者：**Li Jingwei**。中文说明见 [README_CN.md](README_CN.md)。
 
-Developed and published by **zawudui**. This personal source snapshot is based on the previously curated project files; third-party credits and licences are preserved. This repository contains the r7.2 hardware design, STM32F411 firmware, MATLAB host client, enclosure CAD, manufacturing source files, and validation notes.
+Developed and published by **Li Jingwei**. This personal source snapshot is based on the previously curated project files; third-party credits and licences are preserved. This repository contains the r7.2 hardware design, STM32F411 firmware, MATLAB host client, enclosure CAD, manufacturing source files, and validation notes.
 
 > [!IMPORTANT]
 > **Release candidate / prototype status.** This repository is being prepared for its first public release. The hardware is an experimental research accessory, not a medical device. Compatibility with a particular EEG/DAQ system must be verified against that system's DB25 pinout, input voltage, polarity, pulse width, and trigger sampling behavior. Do not connect it to valuable acquisition equipment until the electrical interface has been independently checked.
@@ -27,8 +27,6 @@ One prototype board was recovered and tested on a bench:
 - 100/100 command/ACK transactions passed; measured host write-to-complete-ACK round trip: 0.1796–0.3522 ms under the recorded setup.
 - One DB25 D1 pulse measured approximately 2.002 ms.
 - One unloaded-DB25 MCU-output-to-DB25-output comparison showed approximately 31 ns difference, **uncalibrated for probe/channel skew**. Ordinary oscilloscope probe grounds temporarily commoned host ground and GND_ISO during this capture, so it is not evidence of isolation performance.
-
-These measurements are not an end-to-end host-to-DB25 latency specification, jitter guarantee, long-duration reliability test, ESD qualification, isolation certification, or proof of compatibility with every EEG/DAQ system.
 
 ## Hardware interface
 
@@ -59,14 +57,10 @@ The firmware's current USB VID/PID values (0x0483:0x5740) are **ST example place
 - Original documentation: CC BY 4.0.
 - Third-party materials retain their own licences.
 
-## Safety and limitations
-
-This is an experimental research accessory. No claim is made that the complete assembly has passed IEC ESD testing, dielectric withstand testing, EMC testing, USB power-budget qualification, or exhaustive receiving-device compatibility testing. Device-level component ratings do not establish system-level qualification. Review electrical notes and validate the actual receiving setup before use.
-
 ## Release readiness
 
-This is a source-only prototype candidate, not a production firmware release. See [release checks](docs/release/RELEASE_GATE.md) and [personal repository upload](docs/release/PERSONAL_REPO_MIGRATION.md). Run `python tools/release_audit.py` before upload. The source package contains no private Git history, supplier orders or prebuilt firmware.
+See [release checks](docs/release/RELEASE_GATE.md) and [personal repository upload](docs/release/PERSONAL_REPO_MIGRATION.md). Run `python tools/release_audit.py` before upload. The source package contains no private Git history, supplier orders or prebuilt firmware.
 
 ## Attribution
 
-Copyright (c) 2026 zawudui and contributors, for their original contributions. KiCad-derived library material has separate attribution and licensing. See individual licence files and notices.
+Copyright (c) 2026 Li Jingwei and contributors, for their original contributions. KiCad-derived library material has separate attribution and licensing. See individual licence files and notices.
